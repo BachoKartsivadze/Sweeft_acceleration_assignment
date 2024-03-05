@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  sweeft acceleration assignment
 //
-//  Created by bacho kartsivadze on 22.09.23.
+//  Created by bacho kartsivadze on 05.03.24.
 //
 
 import UIKit
@@ -34,42 +34,36 @@ class ViewController: UIViewController {
 
 
 /// MARK:  Tests
-///
 extension ViewController {
     
     private func task_1_tests() {
         print("\nTask 1")
-        print("test 1:  '\(presenter.minSplit(amount: 9))'")
-        print("test 2:  '\(presenter.minSplit(amount: 26))'")
-        print("test 3:  '\(presenter.minSplit(amount: 172))'")
+        print("test 1:  '\(presenter.lengthOfLongestSubstring("abcabcbb"))'")
+        print("test 2:  '\(presenter.lengthOfLongestSubstring("bbbbb"))'")
     }
     
     private func task_2_tests() {
         print("\nTask 2")
-        print("test 1:  \(presenter.sumOfDigits(start: 7, end: 8))")
-        print("test 2:  \(presenter.sumOfDigits(start: 17, end: 20))")
-        print("test 3:  \(presenter.sumOfDigits(start: 10, end: 12))")
+        print("test 1:  \(presenter.minWindow("ADOBECODEBANC", "ABC"))")
+        print("test 2:  \(presenter.minWindow("a", "aa"))")
     }
     
     private func task_3_tests() {
         print("\nTask 3")
-        print("test 1: '\(presenter.isProperly(sequence: "(()())"))'")
-        print("test 2: '\(presenter.isProperly(sequence: ")(()"))'")
-        print("test 3: '\(presenter.isProperly(sequence: "(()())("))'")
+        print("test 1: \(presenter.wordBreak("leetcode", ["leet", "code"]))")
+        print("test 1: \(presenter.wordBreak("applepenapple", ["apple", "pen"]))")
     }
     
     private func task_4_tests() {
         print("\nTask 4")
-        print("test 1: '\(presenter.countWays(n: 3, steps: [0, 1, 0]))'")
-        print("test 2: '\(presenter.countWays(n: 4, steps: [0, 1, 1, 0]))'")
-        print("test 3: '\(presenter.countWays(n: 5, steps: [1, 1, 0, 1, 1]))'")
+        print("test 1: '\(presenter.topKFrequent( [1,1,1,2,2,3], 2))'")
+        print("test 2: '\(presenter.topKFrequent([1], 1))'")
     }
     
     private func task_5_tests() {
         print("\nTask 5")
-        print("test 1:  '\(presenter.zeros(N: 7))'")
-        print("test 2:  '\(presenter.zeros(N: 12))'")
-        print("test 3:  '\(presenter.zeros(N: 490))'")
+        print("test 1:  '\(presenter.minMeetingRooms([[0, 30],[5, 10],[15, 20]]))'")
+        print("test 2:  '\(presenter.minMeetingRooms([[7,10],[2,4]]))'")
     }
     
 }

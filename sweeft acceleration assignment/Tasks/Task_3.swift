@@ -2,27 +2,32 @@
 //  Task_3.swift
 //  sweeft acceleration assignment
 //
-//  Created by bacho kartsivadze on 23.09.23.
+//  Created by bacho kartsivadze on 05.03.24.
 //
 
 import Foundation
-/**
- When iterating in process number of closed brecets should be less or equal to opened brecets.
- When iterate ends they have to be equal.
- */
+
 extension presenterImpl {
     
     
-    func isProperly(sequence: String) -> Bool {
-        var counter = 0
-        let arrayOfCharacters = Array(sequence)
-        for character in arrayOfCharacters {
-            if character == "(" { counter += 1 }
-            if character == ")" { counter -= 1 }
-            if counter < 0 { return false }
+    func wordBreak(_ s: String, _ words: [String]) -> Bool {
+        var wordsSet = Set(words)
+        
+        var boolArray = Array(repeating: false, count: s.count + 1)
+        
+        boolArray[0] = true
+        
+        for i in 1...s.count {
+            for j in 0..<i {
+                let substring = String(s.prefix(i).suffix(i - j))
+                
+                if boolArray[j] && wordsSet.contains(substring) {
+                    boolArray[i] = true
+                    break
+                }
+            }
         }
-        if counter == 0 { return true }
-        return false
+        return boolArray[s.count]
     }
     
 }

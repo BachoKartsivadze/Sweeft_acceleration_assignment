@@ -2,7 +2,7 @@
 //  Task_4.swift
 //  sweeft acceleration assignment
 //
-//  Created by bacho kartsivadze on 23.09.23.
+//  Created by bacho kartsivadze on 05.03.24.
 //
 
 import Foundation
@@ -10,20 +10,29 @@ import Foundation
 
 extension presenterImpl {
     
-    // Wrapper
-    func countWays(n: Int, steps: [Int]) -> Int {
-        return countWaysRec(n: n, steps: steps) + countWaysRec(n: n-1, steps: steps)
-    }
-    
-    
-    func countWaysRec(n: Int, steps: [Int]) -> Int {
+    func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+        var numbersFreq = [Int: Int]()
+        for num in nums {
+            numbersFreq[num, default: 0] += 1
+        }
         
-        // Base Cases
-        if n == 0 { return 1 }
-        if n < 0 || steps[steps.count-n] == 0 { return 0 }
+        var buckets = Array(repeating: [Int](), count: nums.count + 1)
         
-        // Recursion decomposition
-        return countWaysRec(n: n-1, steps: steps) + countWaysRec(n: n-2, steps: steps)
+        for (num, freq) in numbersFreq {
+            buckets[freq].append(num)
+        }
+        
+        var result = [Int]()
+        for bucket in buckets.reversed() {
+            for num in bucket {
+                result.append(num)
+                if result.count == k {
+                    return result
+                }
+            }
+        }
+        
+        return result
     }
     
 }

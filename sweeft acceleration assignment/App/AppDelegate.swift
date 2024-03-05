@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  sweeft acceleration assignment
 //
-//  Created by bacho kartsivadze on 22.09.23.
+//  Created by bacho kartsivadze on 05.03.24.
 //
 
 import UIKit
